@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Thoufeek N | Cybersecurity Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #ffffff;
+      --accent-color: #00f0ff;
+      --subtext-color: #aaa;
+    }
+    .light-theme {
+      --bg-color: #fdfdfd;
+      --text-color: #0d0d0d;
+      --accent-color: #0078d7;
+      --subtext-color: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 0 20px;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png') fixed center/cover;
+    }
+.hero {
+  transition: opacity 0.6s ease;
+  will-change: opacity;
+}
+.hero.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+    .hero h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      color: #6bd6d6;
+      animation: fadeInUp 2s ease-out forwards;
+      opacity: 0;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: var(--subtext-color);
+      font-style: italic;
+      animation: fadeInUp 2.5s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .theme-toggle {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      background-color: #ccc;
+      border-radius: 34px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: .4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: var(--accent-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+    .slider.round {
+      border-radius: 34px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #444;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #bbb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    .section {
+  scroll-margin-top: 80px;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}
+    .project {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      box-shadow: 0 0 15px var(--accent-color), 0 0 40px var(--accent-color);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .section h3 { font-size: 1.6rem; }
+    }
+  .section h3:hover {
+  color: #6bd6d6;
+  transform: scale(1.05);
+}
+.section h3:hover {
+  color: #6bd6d6;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+  <div class="cursor-glow"></div>
+
+  <section class="hero" id="hero">
+    <h1>Mohammed Thoufeek N</h1>
+    <p>My approach to cybersecurity is clear: <em>protect with precision, learn by exploring vulnerabilities, and stay ahead with vigilance.</em></p>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="theme-switch">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </section>
+
+  <header>
+    <p>Cybersecurity Analyst</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section" id="about" data-aos="fade-up">
+    <h3>About Me</h3>
+    <p>I’m passionate about cybersecurity and have hands-on experience in ethical hacking, threat detection, and network defense. I enjoy breaking things to learn how to protect them better.</p>
+  </section>
+
+  <section class="section" id="skills" data-aos="fade-up">
+    <h3>Skills</h3>
+    <ul>
+      <li>Vulnerability Assessment</li>
+      <li>Threat Intelligence & Analysis</li>
+      <li>Python, Linux, SQL</li>
+      <li>Risk Management</li>
+      <li>Network Scanning & Mapping</li>
+      <li>Malware Analysis</li>
+    </ul>
+  </section>
+
+  <section class="section" id="projects" data-aos="fade-up">
+    <h3>Projects</h3>
+    <div class="project">
+      <strong>VeriFace</strong>
+      <p>A secure facial recognition system with liveness detection using blink tracking and texture analysis to prevent spoofing.</p>
+    </div>
+    <div class="project">
+      <strong>Virtualized Networking Simulator</strong>
+      <p>Simulated proxy environments with VMs to demonstrate secure traffic routing and firewall configurations in real time.</p>
+    </div>
+  </section>
+
+  <section class="section" id="certifications" data-aos="fade-up">
+    <h3>Certifications</h3>
+    <ul>
+      <li>Certified Ethical Hacker (CEH), EC Council – 2025</li>
+      <li>Advanced SOC Analyst (ASA), TechbyHeart – 2025</li>
+      <li>Certified Security Tester (CST), TechbyHeart – 2024</li>
+      <li>Google Cybersecurity, Coursera – 2024</li>
+      <li>Mastering Cyber Defence, RedTeam Hacker Academy – 2024</li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact" data-aos="fade-up">
+    <h3>Contact</h3>
+    <p style="color: var(--text-color);">Email: <a href="mailto:mohammed.thoufeek.n@gmail.com" style="color: var(--text-color);">mohammed.thoufeek.n@gmail.com</a></p>
+    <p style="color: var(--text-color);">Phone: +91 9847900302</p>
+    <p style="color: var(--text-color);">LinkedIn: <a href="https://www.linkedin.com/in/m0hammed-thoufeek" target="_blank" style="color: var(--text-color);">www.linkedin.com/in/m0hammed-thoufeek</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; Built for the future.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const cursor = document.querySelector('.cursor-glow');
+    let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+      currentX += (mouseX - currentX) * 0.05;
+      currentY += (mouseY - currentY) * 0.05;
+      cursor.style.transform = `translate(${currentX - 10}px, ${currentY - 10}px)`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    document.getElementById('theme-switch').addEventListener('change', function () {
+      document.body.classList.toggle('light-theme');
+    });
+  </script>
+
+<script>
+  const heroSection = document.querySelector('.hero');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+      // Scroll down — fade out
+      heroSection.classList.add('hidden');
+    } else if (currentScrollY < lastScrollY) {
+      // Scroll up — fade in
+      heroSection.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>
+
+</body>
+</html>
